@@ -24,7 +24,7 @@ const FALLBACK_PRODUCTS = [
       "Premium self-inking stamp. No separate ink pad needed. Clean, crisp impressions every time.",
     price: BigInt(320),
     priceLabel: "₹320",
-    image: "/assets/generated/image-1-nobg-transparent.dim_400x400.png",
+    image: "/assets/uploads/image-1.png",
   },
   {
     nameEnglish: "Wood Chemical Stamp",
@@ -32,15 +32,15 @@ const FALLBACK_PRODUCTS = [
       "Traditional wooden handle stamp with chemical rubber. Durable and long-lasting.",
     price: BigInt(120),
     priceLabel: "₹120",
-    image: "/assets/generated/wood-chemical-stamp.dim_400x400.png",
+    image: "/assets/uploads/5-inch-rubber-stamp-1.jpg",
   },
   {
-    nameEnglish: "Laminated Name Plate",
+    nameEnglish: "Laminated Pocket name Plate",
     descriptionEnglish:
       "High-quality laminated name plates for offices, homes, and doors. Weather resistant.",
     price: BigInt(80),
     priceLabel: "₹80",
-    image: "/assets/generated/laminated-nameplate.dim_400x400.png",
+    image: "/assets/uploads/lv_0_20260309152130-1.jpg",
   },
   {
     nameEnglish: "Visiting Card",
@@ -48,7 +48,7 @@ const FALLBACK_PRODUCTS = [
       "Professional visiting cards with premium print quality. Perfect for business networking.",
     price: BigInt(800),
     priceLabel: "₹800 / 1000 pcs",
-    image: "/assets/generated/visiting-card.dim_400x400.png",
+    image: "/assets/uploads/IMG_20260309_154713-1.jpg",
   },
 ];
 
@@ -101,7 +101,7 @@ function useShopData() {
           ...p,
           image:
             FALLBACK_PRODUCTS[i]?.image ??
-            "/assets/generated/image-1-nobg-transparent.dim_400x400.png",
+            "/assets/uploads/IMG_20260309_154713-1.jpg",
         }))
       : FALLBACK_PRODUCTS;
 

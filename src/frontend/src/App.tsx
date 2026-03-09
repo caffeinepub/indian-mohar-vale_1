@@ -7,6 +7,7 @@ import {
   Menu,
   MessageCircle,
   Phone,
+  ShoppingBag,
   Star,
   X,
 } from "lucide-react";
@@ -52,9 +53,12 @@ const FALLBACK_PRODUCTS = [
   },
 ];
 
+const FULL_ADDRESS =
+  "29/33 Badshahi Mandi, Near Niranja Cinema, Prayagraj, Uttar Pradesh";
+
 const FALLBACK_SHOP_INFO = {
   shopName: "Indian Mohar Vale",
-  address: "Prayagraj, Uttar Pradesh",
+  address: FULL_ADDRESS,
   phoneNumber1: "6386024945",
   phoneNumber2: "9598807883",
   ownerName: "",
@@ -211,11 +215,60 @@ function Navbar() {
   );
 }
 
+function NoDeliveryBanner() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
+      data-ocid="no_delivery.section"
+      className="relative z-10 mx-4 md:mx-auto md:max-w-3xl mt-4 rounded-2xl overflow-hidden"
+      style={{
+        background: "oklch(0.55 0.18 55 / 0.92)",
+        border: "2px solid oklch(0.75 0.18 68 / 0.7)",
+        boxShadow: "0 4px 24px oklch(0.45 0.18 50 / 0.45)",
+      }}
+    >
+      <div className="flex flex-col sm:flex-row items-center gap-3 px-5 py-4">
+        <div
+          className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center"
+          style={{ background: "oklch(0.75 0.18 68 / 0.25)" }}
+        >
+          <ShoppingBag size={22} className="text-white" />
+        </div>
+        <div className="flex-1 text-center sm:text-left">
+          <p
+            className="font-display font-bold text-white text-base md:text-lg leading-snug"
+            style={{
+              textShadow: "0 1px 4px rgba(0,0,0,0.4)",
+              letterSpacing: "0.02em",
+            }}
+          >
+            🚫 No Delivery Service Available
+          </p>
+          <p
+            className="text-white/90 text-sm mt-0.5"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.35)" }}
+          >
+            Please visit our shop &amp; pick up your order in person
+          </p>
+        </div>
+        <div className="flex items-center gap-1.5 text-white/85 text-xs bg-white/15 rounded-xl px-3 py-2 flex-shrink-0 max-w-xs text-center sm:text-left">
+          <MapPin size={12} className="flex-shrink-0 text-white" />
+          <span style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}>
+            {FULL_ADDRESS}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center justify-center pt-16 overflow-hidden bg-primary"
+      className="relative min-h-[85vh] flex flex-col items-center justify-center pt-16 overflow-hidden bg-primary"
     >
       {/* Wallpaper Background */}
       <div
@@ -233,7 +286,12 @@ function HeroSection() {
       <div className="absolute top-20 right-24 w-16 h-16 rounded-full border border-secondary/20 hidden lg:block" />
       <div className="absolute bottom-20 left-10 w-24 h-24 rounded-full border-2 border-secondary/20 hidden lg:block" />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      {/* No Delivery Banner — sits below navbar, above hero content */}
+      <div className="relative z-10 w-full pt-4 pb-2 px-0">
+        <NoDeliveryBanner />
+      </div>
+
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pb-10">
         {/* Location Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -243,7 +301,7 @@ function HeroSection() {
         >
           <Badge className="bg-secondary/90 text-foreground border-0 px-4 py-1.5 text-sm font-medium gap-1.5">
             <MapPin size={13} />
-            Prayagraj, Uttar Pradesh
+            29/33 Badshahi Mandi, Near Niranja Cinema, Prayagraj
           </Badge>
         </motion.div>
 
@@ -309,7 +367,7 @@ function HeroSection() {
           {[
             { num: "4+", label: "Products" },
             { num: "100%", label: "Quality" },
-            { num: "Fast", label: "Delivery" },
+            { num: "Walk-in", label: "Pickup" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div
@@ -627,9 +685,9 @@ function ContactSection({ shopInfo }: { shopInfo: typeof FALLBACK_SHOP_INFO }) {
             {shopInfo.shopName}
           </h3>
 
-          <div className="flex items-center justify-center gap-2 text-white/75 mb-8">
-            <MapPin size={16} className="text-secondary flex-shrink-0" />
-            <span>Prayagraj, Uttar Pradesh</span>
+          <div className="flex items-start justify-center gap-2 text-white/75 mb-8">
+            <MapPin size={16} className="text-secondary flex-shrink-0 mt-0.5" />
+            <span>{FULL_ADDRESS}</span>
           </div>
 
           {/* Serving note */}
@@ -719,9 +777,9 @@ function Footer({ shopInfo }: { shopInfo: typeof FALLBACK_SHOP_INFO }) {
             >
               {shopInfo.shopName}
             </h4>
-            <div className="flex items-center gap-1.5 text-white/55 text-sm">
-              <MapPin size={13} className="flex-shrink-0" />
-              <span>Prayagraj, Uttar Pradesh</span>
+            <div className="flex items-start gap-1.5 text-white/55 text-sm">
+              <MapPin size={13} className="flex-shrink-0 mt-0.5" />
+              <span>{FULL_ADDRESS}</span>
             </div>
           </div>
 

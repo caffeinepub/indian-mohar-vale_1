@@ -54,7 +54,7 @@ const FALLBACK_PRODUCTS = [
 ];
 
 const FULL_ADDRESS =
-  "29/33 Badshahi Mandi, Near Niranja Cinema, Prayagraj, Uttar Pradesh";
+  "29/33 Badshahi Mandi, Near Niranjan Cinema, Prayagraj, Uttar Pradesh";
 
 const FALLBACK_SHOP_INFO = {
   shopName: "Indian Mohar Vale",
@@ -301,7 +301,7 @@ function HeroSection() {
         >
           <Badge className="bg-secondary/90 text-foreground border-0 px-4 py-1.5 text-sm font-medium gap-1.5">
             <MapPin size={13} />
-            29/33 Badshahi Mandi, Near Niranja Cinema, Prayagraj
+            29/33 Badshahi Mandi, Near Niranjan Cinema, Prayagraj
           </Badge>
         </motion.div>
 

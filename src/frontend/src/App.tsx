@@ -623,7 +623,7 @@ function CustomerCareSection() {
           <Clock size={18} className="text-secondary flex-shrink-0" />
           <div>
             <span className="text-white/90 text-sm font-medium">
-              Mon–Sat: 9 AM – 8 PM
+              Mon–Sat: 10 AM – 8 PM
             </span>
           </div>
         </motion.div>
@@ -823,7 +823,7 @@ function Footer({ shopInfo }: { shopInfo: typeof FALLBACK_SHOP_INFO }) {
             <div className="flex items-start gap-2 text-white/65 text-sm">
               <Clock size={13} className="mt-0.5 flex-shrink-0" />
               <div>
-                <div>Mon–Sat: 9 AM – 8 PM</div>
+                <div>Mon–Sat: 10 AM – 8 PM</div>
               </div>
             </div>
           </div>

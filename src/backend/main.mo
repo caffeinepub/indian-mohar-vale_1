@@ -48,9 +48,9 @@ actor {
     {
       shopName = "Indian Mohar Vale";
       ownerName = "Ashok Kumar Agrawal";
-      phoneNumber1 = "6201721786";
-      phoneNumber2 = "9415961119";
-      address = "Shop 2, First Floor, Bhaghambari Press";
+      phoneNumber1 = "6386024945";
+      phoneNumber2 = "9598807883";
+      address = "29/33 Badshahi Mandi, Near Niranja Cinema, Prayagraj, Uttar Pradesh";
       gstinNumber = "09AHFPA6617Q1ZA";
     };
   };
